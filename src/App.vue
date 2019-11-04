@@ -1,13 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <!-- <router-view/> -->
+    <Header></Header>
+    <TodoInput></TodoInput>
+    <TodoList></TodoList>
+    <Footer></Footer>
+    
   </div>
 </template>
 
 <script>
+import Header from './components/Header.vue'
+import TodoInput from './components/TodoInput.vue'
+import TodoList from './components/TodoList.vue'
+import Footer from './components/Footer.vue'
 export default {
-  name: 'App'
+  // name: 'App'
+  components: {
+    'Header': Header,
+    'TodoInput': TodoInput,
+    'TodoList': TodoList,
+    'Footer': Footer,
+  }
 }
 </script>
 
