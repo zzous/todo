@@ -1,7 +1,13 @@
 <template>
   <section>
     <ul>
-      <li v-for="todoItem in todoItems">{{ todoItem }}</li>
+      <li v-for="(todoItem, index) in todoItems" :key="todoItem" class="shadow">
+        <i class="checkBtn">{{ index + 1 }}</i>
+        {{ todoItem }}
+        <span class="removeBtn" type="button" @click="removeTodo(todoItem, index)">
+          <i class="far fa-trash-alt">-</i>
+        </span>
+      </li>
     </ul>
   </section>
 </template>
@@ -19,10 +25,40 @@ export default {
         this.todoItems.push(localStorage.key(i))
       }
     }
+  },
+  methods: {
+    removeTodo(todoItem, index) {
+      localStorage.removeItem(todoItem);
+      this.todoItems.splice(index, 1)
+    }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  ul {
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+  li {
+    display: flex;
+    min-height: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0.5rem 0;
+    padding: 0 0.9rem;
+    border-radius: 5px;
+    background: #fff;
+  }
+  .checkBtn {
+    line-height: 50px;
+    margin-right: 15px;
+    color: #62acde;
+  }
+  .removeBtn {
+    margin-left: auto;
+    color: #de4343;
+  }
 </style>

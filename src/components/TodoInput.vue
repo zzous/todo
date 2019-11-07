@@ -3,7 +3,7 @@
     <input type="text" v-model="newTodoItem" placeholder="Type what you have to do" @keyup.enter="addTodo">
     <!-- <button @click="addTodo">ADD</button> -->
     <span class="addContainer" @click="addTodo">
-      <i class="addBtn fas fa-plus"></i>
+      <i class="addBtn">+</i>
     </span>
   </div>
 </template>
@@ -49,11 +49,13 @@ export default {
     display: block;
     float: right;
     width: 3rem;
+    cursor: pointer;
     border-radius: 0 5px 5px 0;
     background: linear-gradient(to right, #6478Fb #8763FB);
   }
   .addBtn {
+    display: inline-block;
     vertical-align: middle;
-    color: #fff;
+    color: #333;
   }
 </style>

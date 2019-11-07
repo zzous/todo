@@ -21,13 +21,15 @@ export default {
     background: #f6f6f6;
   }
   input {
+    width: 80%;
+    text-align: center;
     border-style: groove;
-    width: 200px;
   }
   button {
     border-style: groove;
   }
   .shadow {
+    text-align: center;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, .03);
   }
 </style>
